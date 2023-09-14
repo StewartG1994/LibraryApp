@@ -10,7 +10,12 @@ function Book(title, pages, author){
     this.title = title;
     this.pages = pages;
     this.author = author
+}
 
+function fieldReset (){
+    title.textContent = '';
+    author.textContent = '';
+    pages.textContent = '';
 }
 
 function addBookToLibrary (title, pages, author){
@@ -20,6 +25,8 @@ function addBookToLibrary (title, pages, author){
 
 submit.addEventListener('click' , () =>{
 event.preventDefault()
+bookArea.textContent='';
+fieldReset()
 addBookToLibrary(title.value, pages.value, author.value)
 runBuildACard()
 console.log(myLibrary)
@@ -34,6 +41,7 @@ function runBuildACard(){
 
 function buildACard(item){
 let card = document.createElement('div')
+card.className = 'card'
 let titleElement = document.createElement('p')
 let pageElement = document.createElement('p')
 let authorElement = document.createElement('p')
