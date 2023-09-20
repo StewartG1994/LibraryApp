@@ -13,9 +13,9 @@ function Book(title, pages, author){
 }
 
 function fieldReset (){
-    title.textContent = '';
-    author.textContent = '';
-    pages.textContent = '';
+    title.value = '';
+    author.value = '';
+    pages.value = '';
 }
 
 function addBookToLibrary (title, pages, author){
@@ -26,9 +26,9 @@ function addBookToLibrary (title, pages, author){
 submit.addEventListener('click' , () =>{
 event.preventDefault()
 bookArea.textContent='';
-fieldReset()
 addBookToLibrary(title.value, pages.value, author.value)
 runBuildACard()
+fieldReset()
 console.log(myLibrary)
 })
 
